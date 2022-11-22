@@ -1,0 +1,281 @@
+main{
+	// --- Section
+	section{
+		// --- Main
+		&.section_main{
+			padding: 50px;
+		}
+
+		// --- Title
+		.section_title{
+			h2{
+				font-size: 30px;
+			}
+		}
+	}
+
+	// --- Information
+	.section_information{
+		padding: 50px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		background-color: $grey;
+		gap: 20px;
+
+		h2{
+			font-size: 30px;
+			color: black;
+		}
+
+		p{
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 28px;
+		}
+
+		a{
+			margin-top: 20px;
+		}
+	}
+
+	// --- Working
+	.section_working{
+		// --- Main
+		.working_main{
+			counter-reset: work;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 40px;
+			margin-top: 20px;
+
+			// --- Card
+			.working_card{
+				position: relative;
+				background-color: white;
+				box-shadow: 0 5px 10px $shadow;
+				width: 100%;
+				border-radius: $radius;
+				padding: 30px;
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				cursor: pointer;
+
+				@include tms(.3s);
+
+				&:before{
+					counter-increment: work;
+					content: counter(work);
+					position: absolute;
+					left: 0;
+					background-color: $primary;
+					height: 30px;
+					width: 30px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 100px;
+					color: white;
+					padding: 5px;
+					font-weight: 500;
+					top: 50%;
+					transform: translate(-15px, -50%);
+				}
+
+				&:hover{
+					background-color: lighten($secondary, 24);
+
+					i{
+						color: $primary;
+					}
+				}
+
+				i{
+					font-size: 20px;
+					margin-left: 10px;
+					color: darken($grey, 25);
+				}
+
+				p{
+					font-size: 18px;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+
+	// --- Eat
+	.section_eat{
+		background-color: $grey;
+
+		// --- Main
+		.eat_main{
+			margin-top: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+
+			// --- Card
+			.eat_card{
+				width: 100%;
+				border-radius: $radius;
+				box-shadow: 0 5px 10px $shadow;
+				overflow: hidden;
+
+				&:hover{
+					scale: 1.05;
+				}
+
+				// --- Thumbnail
+				.eat_thumbnail{
+					position: relative;
+
+					.eat_new{
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						background-color: #99E2D0;
+						padding: 8px 15px;
+						border-radius: $radius / 5;
+						box-shadow: 0 5px 10px $shadow;
+
+						p{
+							color: #1f997c;
+							font-weight: 500;
+							font-size: 14px;
+						}
+					}
+
+					img{
+						width: 100%;
+						height: 200px;
+						object-fit: cover;
+					}
+				}
+
+				// --- Content
+				.eat_content{
+					padding: 14px;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					background-color: white;
+
+					// --- Title
+					.eat_title{
+						h3{
+							margin-bottom: 5px;
+						}
+
+						p{
+							font-weight: 300;
+						}
+					}
+
+					// --- Ico
+					.eat_ico{
+						i{
+							color: black;
+							cursor: pointer;
+							font-size: 25px;
+
+							@include tms(.3s);
+
+							&:hover{
+								background: linear-gradient(#9356DC, #FF79DA);
+								color: #fff;
+								font-weight: 600;
+								transform: scale(1.2);
+								-webkit-background-clip: text;
+								-webkit-text-fill-color: transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 1060px) {
+	main{
+		// --- Working
+		.section_working {
+			// --- Main
+			.working_main{
+				// --- Card
+				.working_card{
+					p{
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+		// --- Eat
+		.section_eat{
+			// --- Main
+			.eat_main{
+				flex-wrap: wrap;
+
+				// --- Card
+				.eat_card{
+					width: 48%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	main{
+		// --- Section
+		section{
+			// --- Main
+			&.section_main{
+				padding: 50px 30px;
+			}
+		}
+
+		// --- Information
+		.section_information{
+			padding: 50px;
+			text-align: center;
+		}
+
+		// --- Working
+		.section_working{
+			// --- Main
+			.working_main{
+				flex-direction: column;
+
+				// --- Card
+				.working_card{
+					p{
+						font-size: 16px;
+					}
+				}
+			}
+		}
+
+		// --- Eat
+		.section_eat{
+			background-color: $grey;
+
+			// --- Main
+			.eat_main{
+				flex-direction: column;
+
+				// --- Card
+				.eat_card{
+					width: 100%;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+// --- Loader
+@keyframes loader {
+	0% {
+		visibility: visible;
+		opacity: 1;
+		z-index: 9999;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		visibility: hidden;
+		opacity: 0;
+		z-index: -1;
+	}
+}
+
+// --- Checked
+@keyframes checked {
+	0% {
+		transform: rotateZ(100deg);
+	}
+	50% {
+		transform: rotateZ(-50deg);
+	}
+	100% {
+		transform: rotateZ(0deg);
+	}
+}
+
+// --- Show Card
+@keyframes showCard {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: .5;
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}

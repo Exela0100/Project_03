@@ -1,0 +1,31 @@
+// --- Button primary
+@mixin btn_primary {
+	background-image: linear-gradient(174deg, $secondary 0%, $primary 90%);
+	border: 0 solid transparent;
+	border-radius: 30px;
+	box-shadow: 0px 0px 12px $shadow;
+	color: white;
+	font-weight: 500;
+	margin: 0 auto;
+	padding: 1em 1.5em;
+	transition: all .3s ease-in-out;
+
+	&:hover {
+		box-shadow: 5px 5px 12px $shadow;
+		background-image: linear-gradient(174deg, lighten($secondary, 5) 0%, lighten($primary, 5) 90%);
+		transform: translateY(-.2em);
+	}
+}
+
+// --- Center Mixin
+@mixin center($width){
+	position: relative;
+	margin: 0 auto;
+	height: inherit;
+	max-width: $width;
+}
+
+// --- Transition Mixin
+@mixin tms($time){
+	transition: $time
+}

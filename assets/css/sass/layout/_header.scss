@@ -1,0 +1,49 @@
+header.header{
+	background-color: white;
+	height: $header_height;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	box-shadow: 0 0 0.5rem $shadow;
+
+	.header_back{
+		position: absolute;
+		height: $header_height;
+		width: $header_height;
+		left: 0;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		a{
+			font-size: 20px;
+
+			&:hover{
+				color: $primary;
+				scale: 1.2;
+			}
+		}
+	}
+
+	// --- Logo
+	.header_logo{
+		a{
+			img{
+				height: 30px;
+			}
+
+			h1{
+				display: none;
+			}
+		}
+	}
+}
+
+main{
+	padding-top: 80px;
+}
