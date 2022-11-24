@@ -111,25 +111,30 @@
 					align-items: stretch;
 					gap: 20px;
 					box-shadow: 0 5px 10px $shadow;
-					animation: showCard .5s ease-in-out;
+					animation: showCard .6s;
 					animation-fill-mode: backwards;
-					transition: all .2s ease-in-out;
+					transition: all .3s ease-in-out;
 
-					@for $i from 2 through 4 {
-						&:nth-child(#{$i}){
-							animation-delay: 0.2s * $i;
+					@for $i from 0 to 9 {
+						&.delay_#{$i} {
+							animation-delay: #{$i/10}s;
 						}
 					}
 
 					&:hover{
 						transform: scale(1.02);
 
+						// --- Price
+						.card_price{
+							padding-right: 60px;
+						}
+
 						// --- Check
 						.card_check{
 							right: 0;
 
 							i {
-								animation: checked 1s 1 ease-in-out;
+								transform: rotate(0deg);
 							}
 						}
 					}
@@ -162,6 +167,7 @@
 
 					// --- Price
 					.card_price{
+						transition: all .5s ease-in-out;
 						display: flex;
 						align-items: flex-end;
 
@@ -186,15 +192,20 @@
 						i {
 							color: white;
 							font-size: 30px;
-							transition: all .4s .2s ease-in-out;
+							transform: rotate(180deg);
+							transition-duration: .5s;
 						}
+					}
+
+					input:checked ~ .card_price{
+						padding-right: 60px;
 					}
 
 					input:checked ~ .card_check{
 						right: 0;
 
 						i {
-							animation: checked 1s 1 ease-in-out;
+							transform: rotate(0deg);
 						}
 					}
 				}
