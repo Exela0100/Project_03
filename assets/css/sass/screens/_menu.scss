@@ -114,6 +114,7 @@
 					animation: showCard .6s;
 					animation-fill-mode: backwards;
 					transition: all .3s ease-in-out;
+					cursor: pointer;
 
 					@for $i from 0 to 9 {
 						&.delay_#{$i} {
@@ -141,6 +142,12 @@
 
 					input{
 						display: none;
+					}
+
+					label{
+						position: absolute;
+						top: 0;right: 0;left: 0;bottom: 0;
+						z-index: 1;
 					}
 
 					// --- Content
